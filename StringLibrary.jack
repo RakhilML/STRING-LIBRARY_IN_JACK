@@ -1,0 +1,74 @@
+class StringLibrary {
+ 
+// Finding string length 
+ function int strlen(String str){
+    return Memory.peek(str + 1);
+}
+
+// Appending strings
+  function String strappend(String str1, String str2) {
+    var String strx;
+    var int i,j,c,d;
+    var int l1,l2,l;
+    var String str;
+
+    let i=0;
+    let j=0;
+    let l1= str1.length();
+    let l2= str2.length();
+    let l =l1 +l2 + 1;
+    let strx=String.new(l);
+    
+    while(i<l1) {
+      let c=str1.charAt(i);
+      let i=i+1;
+      do strx.appendChar(c);
+    }
+    
+    let str = " ";
+    do strx.appendChar(str.charAt(0));
+    
+    while(j<l2) {
+      let d=str2.charAt(j);
+      let j=j+1;
+      do strx.appendChar(d);
+    }
+
+    return strx;  
+  }
+
+// Comparing strings
+  function String strcmp(String str1, String str2) {
+    var Array char1, char2;
+    var int i;
+  
+    if (~(str1.length() = str2.length())) {
+      return "Strings are not equal";
+    }
+
+    let char1 = Array.new(str1.length());
+    let char2 = Array.new(str2.length());
+
+    let i = 0;
+    while (i < str1.length()) {
+      let char1[i] = str1.charAt(i);
+      let i = i + 1;
+    }
+
+    let i = 0;
+    while (i < str2.length()) {
+      let char2[i] = str2.charAt(i);
+      let i = i + 1;
+    }
+
+    let i = 0;
+    while (i < str1.length()) {
+      if (~(char1[i] = char2[i])) {
+        return "Strings are not equal";
+      }
+      let i = i + 1;
+    }
+
+    return "Strings are equal";
+  }
+}

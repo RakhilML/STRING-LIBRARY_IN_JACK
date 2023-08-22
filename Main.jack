@@ -1,0 +1,34 @@
+class Main {
+  function void main() {
+    var MorseCode codes;
+    var String str1, str2, opt;
+
+    let str1 = Keyboard.readLine("String: ");
+
+    do Output.printString("Which function to call?");
+    do Output.println();
+    do Output.printString("(1) strlen, (2) strappend, (3) strcmp");
+    do Output.println();
+
+    let opt = Keyboard.readInt("Option: ");
+
+    if (opt = 1) {
+      do Output.printString("Length of String: ");
+      do Output.printInt(StringLibrary.strlen(str1));
+    }
+    
+    if (opt = 2) {
+      let str2 = Keyboard.readLine("String: ");
+      do Output.printString("Appended String: ");
+      do Output.printString(StringLibrary.strappend(str1, str2));
+    }
+
+    if (opt = 3) {
+      let str2 = Keyboard.readLine("String: ");
+      do Output.printString("Comparison Output: ");
+      do Output.printString(StringLibrary.strcmp(str1, str2));
+    }
+    return;
+ }
+
+}
